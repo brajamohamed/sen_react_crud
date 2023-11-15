@@ -23,6 +23,14 @@ const Signup = ({ users, setUsers }) => {
       if (emailRef.current.checkValidity()) {
         if (form.password === form.c_password) {
           // alert("submitted successfully");
+          setUsers([...users, form]);
+          setForm({
+            name: "",
+            email: "",
+            phone: "",
+            password: "",
+            c_password: "",
+          });
         } else {
           alert("password doesn't match");
         }
@@ -32,14 +40,6 @@ const Signup = ({ users, setUsers }) => {
     } else {
       alert("Fill all fields");
     }
-    setUsers([...users, form]);
-    setForm({
-      name: "",
-      email: "",
-      phone: "",
-      password: "",
-      c_password: "",
-    });
   };
   useEffect(() => {
     console.log("Users in Signup", users);
