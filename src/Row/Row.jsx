@@ -1,10 +1,10 @@
 import React from "react";
-
+import { useState } from "react";
 const Row = ({ user }) => {
+  const [count, setCount] = useState(1);
   console.log("User:", user);
   return (
     <tr>
-      <th scope="row">{1}</th>
       <td>{user.name}</td>
       <td>{user.email}</td>
       <td>{user.phone}</td>
